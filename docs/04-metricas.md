@@ -1,71 +1,136 @@
 # Avaliação e Métricas
 
-## Como Avaliar seu Agente
+## Como Avaliar o Agente Guto
 
-A avaliação pode ser feita de duas formas complementares:
+A avaliação do agente **Guto** pode ser feita de duas formas complementares:
 
-1. **Testes estruturados:** Você define perguntas e respostas esperadas;
-2. **Feedback real:** Pessoas testam o agente e dão notas.
+1. **Testes estruturados:** perguntas planejadas com respostas esperadas, baseadas nos dados da pasta `data/`;
+2. **Feedback real:** usuários testam o agente e avaliam clareza, utilidade e segurança.
+
+O objetivo é garantir que o Guto seja:
+
+- educativo
+- consistente
+- seguro
+- útil para planejamento financeiro realista
 
 ---
 
 ## Métricas de Qualidade
 
-| Métrica | O que avalia | Exemplo de teste |
-|---------|--------------|------------------|
-| **Assertividade** | O agente respondeu o que foi perguntado? | Perguntar o saldo e receber o valor correto |
-| **Segurança** | O agente evitou inventar informações? | Perguntar algo fora do contexto e ele admitir que não sabe |
-| **Coerência** | A resposta faz sentido para o perfil do cliente? | Sugerir investimento conservador para cliente conservador |
+| Métrica | O que avalia | Exemplo aplicado ao Guto |
+|---------|--------------|--------------------------|
+| **Assertividade** | O agente respondeu corretamente com base nos dados? | Perguntar quanto foi gasto no mês e receber o valor correto do `transacoes.csv` |
+| **Segurança** | O agente evitou inventar informações? | Perguntar um produto inexistente e ele admitir que não possui esse dado |
+| **Coerência** | A resposta faz sentido para o perfil do usuário? | Recomendar reserva de emergência antes de sugerir investimentos de risco |
+| **Didática** | O agente explica de forma simples e educativa? | Usuário pergunta sobre Tesouro Selic e recebe explicação acessível |
+| **Proatividade** | O agente sugere próximos passos úteis? | Alertar quando o usuário atingir 80% do limite de gastos |
 
 > [!TIP]
-> Peça para 3-5 pessoas (amigos, família, colegas) testarem seu agente e avaliarem cada métrica com notas de 1 a 5. Isso torna suas métricas mais confiáveis! Caso use os arquivos da pasta `data`, lembre-se de contextualizar os participantes sobre o **cliente fictício** representado nesses dados.
+> Peça para 3 a 5 pessoas testarem o Guto e avaliarem cada métrica com notas de 1 a 5.  
+> Como os dados são fictícios (João Silva), os participantes devem ser informados que estão simulando um cliente exemplo.
 
 ---
 
 ## Exemplos de Cenários de Teste
 
-Crie testes simples para validar seu agente:
+Abaixo estão testes simples para validar o comportamento do agente.
+
+---
 
 ### Teste 1: Consulta de gastos
-- **Pergunta:** "Quanto gastei com alimentação?"
-- **Resposta esperada:** Valor baseado no `transacoes.csv`
-- **Resultado:** [ ] Correto  [ ] Incorreto
 
-### Teste 2: Recomendação de produto
-- **Pergunta:** "Qual investimento você recomenda para mim?"
-- **Resposta esperada:** Produto compatível com o perfil do cliente
-- **Resultado:** [ ] Correto  [ ] Incorreto
+- **Pergunta:**  
+  "Quanto gastei com alimentação este mês?"
 
-### Teste 3: Pergunta fora do escopo
-- **Pergunta:** "Qual a previsão do tempo?"
-- **Resposta esperada:** Agente informa que só trata de finanças
-- **Resultado:** [ ] Correto  [ ] Incorreto
+- **Resposta esperada:**  
+  Soma correta baseada nas transações do arquivo `transacoes.csv`
 
-### Teste 4: Informação inexistente
-- **Pergunta:** "Quanto rende o produto XYZ?"
-- **Resposta esperada:** Agente admite não ter essa informação
-- **Resultado:** [ ] Correto  [ ] Incorreto
+- **Resultado:**  
+  [ ] Correto  [ ] Incorreto
+
+---
+
+### Teste 2: Planejamento de meta financeira
+
+- **Pergunta:**  
+  "Quero juntar R$ 12.000 em 2 anos. Quanto preciso guardar por mês?"
+
+- **Resposta esperada:**  
+  Cálculo correto:  
+  12.000 ÷ 24 = R$ 500/mês
+
+- **Resultado:**  
+  [ ] Correto  [ ] Incorreto
+
+---
+
+### Teste 3: Recomendação educativa de produto
+
+- **Pergunta:**  
+  "Qual produto é indicado para minha reserva de emergência?"
+
+- **Resposta esperada:**  
+  Sugestão baseada em `produtos_financeiros.json`, como Tesouro Selic ou CDB Liquidez Diária, com explicação simples.
+
+- **Resultado:**  
+  [ ] Correto  [ ] Incorreto
+
+---
+
+### Teste 4: Pergunta fora do escopo
+
+- **Pergunta:**  
+  "Qual a previsão do tempo para amanhã?"
+
+- **Resposta esperada:**  
+  O agente informa que é especializado em finanças e redireciona o usuário.
+
+- **Resultado:**  
+  [ ] Correto  [ ] Incorreto
+
+---
+
+### Teste 5: Informação inexistente
+
+- **Pergunta:**  
+  "Quanto rende o investimento XYZ?"
+
+- **Resposta esperada:**  
+  O agente admite que não possui essa informação na base e sugere alternativas.
+
+- **Resultado:**  
+  [ ] Correto  [ ] Incorreto
 
 ---
 
 ## Resultados
 
-Após os testes, registre suas conclusões:
+Após aplicar os testes, as conclusões devem ser registradas:
 
-**O que funcionou bem:**
-- [Liste aqui]
+### O que funcionou bem:
 
-**O que pode melhorar:**
-- [Liste aqui]
+- O agente manteve respostas educativas e claras
+- Os cálculos de metas e gastos foram consistentes
+- O agente evitou alucinação ao faltar dados
+
+### O que pode melhorar:
+
+- Expandir o dataset com mais categorias de gastos
+- Criar memória de longo prazo para metas concluídas
+- Implementar alertas automáticos em tempo real
 
 ---
 
 ## Métricas Avançadas (Opcional)
 
-Para quem quer explorar mais, algumas métricas técnicas de observabilidade também podem fazer parte da sua solução, como:
+Para versões futuras do Guto, métricas técnicas podem ser incluídas:
 
-- Latência e tempo de resposta;
-- Consumo de tokens e custos;
-- Logs e taxa de erros.
+- Tempo médio de resposta do agente
+- Consumo de tokens e custo por interação
+- Taxa de erros em consultas aos arquivos da base
+- Logs estruturados para auditoria
 
-Ferramentas especializadas em LLMs, como [LangWatch](https://langwatch.ai/) e [LangFuse](https://langfuse.com/), são exemplos que podem ajudar nesse monitoramento. Entretanto, fique à vontade para usar qualquer outra que você já conheça!
+Ferramentas como **LangFuse** ou **LangWatch** podem ser utilizadas para observabilidade em aplicações com LLMs.
+
+---
