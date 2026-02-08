@@ -3,7 +3,6 @@
 ## Caso de Uso
 
 ### Problema
-> Qual problema financeiro seu agente resolve?
 
 O agente Guto resolve um problema muito comum:
 muitas pessoas querem melhorar sua vida financeira, mas não sabem por onde começar.
@@ -16,7 +15,6 @@ Ele foca principalmente em:
 - Muitas metas parecem grandes demais (como comprar um carro ou viajar), e isso gera ansiedade e procrastinação.
 
 ### Solução
-> Como o agente resolve esse problema de forma proativa?
 
 O Guto atua como um assistente financeiro educativo e consultivo, ajudando o usuário de forma prática e proativa.
 
@@ -40,7 +38,6 @@ Alertas e acompanhamento contínuo
 O agente incentiva consistência e disciplina financeira sem ser pesado ou complicado.
 
 ### Público-Alvo
-> Quem vai usar esse agente?
 
 O agente é voltado para:
 
@@ -56,7 +53,6 @@ Faixa geral: jovens e adultos
 Guto
 
 ### Personalidade
-> Como o agente se comporta? (ex: consultivo, direto, educativo)
 
 O Guto é um agente que combina dois estilos:
 
@@ -133,7 +129,6 @@ flowchart TD
 
 
 ### Limitações Declaradas
-> O que o agente NÃO faz?
 
 - Não acessa banco, cartão, Open Finance ou dados privados automaticamente.
 - Não executa transações financeiras.
