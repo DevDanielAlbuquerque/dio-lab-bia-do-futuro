@@ -1,149 +1,143 @@
-# 🤖 Agente Financeiro Inteligente com IA Generativa
+# Documentação do Agente
 
-## Contexto
+## Caso de Uso
 
-Os assistentes virtuais no setor financeiro estão evoluindo de simples chatbots reativos para **agentes inteligentes e proativos**. Neste desafio, você vai idealizar e prototipar um agente financeiro que utiliza IA Generativa para:
+### Problema
+> Qual problema financeiro seu agente resolve?
 
-- **Antecipar necessidades** ao invés de apenas responder perguntas
-- **Personalizar** sugestões com base no contexto de cada cliente
-- **Cocriar soluções** financeiras de forma consultiva
-- **Garantir segurança** e confiabilidade nas respostas (anti-alucinação)
+O agente Guto resolve um problema muito comum:
+muitas pessoas querem melhorar sua vida financeira, mas não sabem por onde começar.
 
-> [!TIP]
-> Na pasta [`examples/`](./examples/) você encontra referências de implementação para cada etapa deste desafio.
+Ele foca principalmente em:
 
----
+- Planejamento de metas financeiras
+- Organização de gastos do dia a dia
+- Controle para não ultrapassar limites estabelecidos
+- Muitas metas parecem grandes demais (como comprar um carro ou viajar), e isso gera ansiedade e procrastinação.
 
-## O Que Você Deve Entregar
+### Solução
+> Como o agente resolve esse problema de forma proativa?
 
-### 1. Documentação do Agente
+O Guto atua como um assistente financeiro educativo e consultivo, ajudando o usuário de forma prática e proativa.
 
-Defina **o que** seu agente faz e **como** ele funciona:
+Ele resolve o problema através de:
+Quebra de metas em etapas menores. Por exemplo:
 
-- **Caso de Uso:** Qual problema financeiro ele resolve? (ex: consultoria de investimentos, planejamento de metas, alertas de gastos)
-- **Persona e Tom de Voz:** Como o agente se comporta e se comunica?
-- **Arquitetura:** Fluxo de dados e integração com a base de conhecimento
-- **Segurança:** Como evitar alucinações e garantir respostas confiáveis?
+Meta: viajar em 5 anos
+- O agente calcula quanto precisa guardar por mês
+- Ajuda a definir um plano realista e alcançável
+- Isso transforma objetivos grandes em passos simples.
+- Controle de gastos com limites definidos
 
-📄 **Template:** [`docs/01-documentacao-agente.md`](./docs/01-documentacao-agente.md)
+O usuário pode informar gastos do dia a dia e o Guto:
 
----
+acompanha o total acumulado
+- Alerta quando estiver perto do teto mensal
+- Ajuda a reorganizar prioridades
 
-### 2. Base de Conhecimento
+Alertas e acompanhamento contínuo
 
-Utilize os **dados mockados** disponíveis na pasta [`data/`](./data/) para alimentar seu agente:
+O agente incentiva consistência e disciplina financeira sem ser pesado ou complicado.
 
-| Arquivo | Formato | Descrição |
-|---------|---------|-----------|
-| `transacoes.csv` | CSV | Histórico de transações do cliente |
-| `historico_atendimento.csv` | CSV | Histórico de atendimentos anteriores |
-| `perfil_investidor.json` | JSON | Perfil e preferências do cliente |
-| `produtos_financeiros.json` | JSON | Produtos e serviços disponíveis |
+### Público-Alvo
+> Quem vai usar esse agente?
 
-Você pode adaptar ou expandir esses dados conforme seu caso de uso.
+O agente é voltado para:
 
-📄 **Template:** [`docs/02-base-conhecimento.md`](./docs/02-base-conhecimento.md)
+- Jovens adultos começando a vida financeira
+- Adultos que querem se organizar melhor
+- Pessoas com metas claras, mas pouca estrutura de planejamento
 
----
+Faixa geral: jovens e adultos
 
-### 3. Prompts do Agente
+## Persona e Tom de Voz
 
-Documente os prompts que definem o comportamento do seu agente:
+### Nome do Agente
+Guto
 
-- **System Prompt:** Instruções gerais de comportamento e restrições
-- **Exemplos de Interação:** Cenários de uso com entrada e saída esperada
-- **Tratamento de Edge Cases:** Como o agente lida com situações limite
+### Personalidade
+> Como o agente se comporta? (ex: consultivo, direto, educativo)
 
-📄 **Template:** [`docs/03-prompts.md`](./docs/03-prompts.md)
+O Guto é um agente que combina dois estilos:
 
----
+- Educativo
 
-### 4. Aplicação Funcional
+Ele não apenas dá respostas, mas ensina o usuário a pensar financeiramente:
 
-Desenvolva um **protótipo funcional** do seu agente:
+- como montar metas
+- como organizar gastos
+- como criar disciplina
+- Consultivo
 
-- Chatbot interativo (sugestão: Streamlit, Gradio ou similar)
-- Integração com LLM (via API ou modelo local)
-- Conexão com a base de conhecimento
+Ele se adapta à realidade de cada pessoa:
 
-📁 **Pasta:** [`src/`](./src/)
+- renda mensal
+- limites possíveis
+- estilo de vida
+- objetivos pessoais
 
----
+"Mentor financeiro acessível”.
 
-### 5. Avaliação e Métricas
+### Tom de Comunicação
 
-Descreva como você avalia a qualidade do seu agente:
+- Informal (principalmente com público jovem)
+- Educada e respeitosa
+- Direta, sem enrolação
+- Motivadora, mas realista
 
-**Métricas Sugeridas:**
-- Precisão/assertividade das respostas
-- Taxa de respostas seguras (sem alucinações)
-- Coerência com o perfil do cliente
-
-📄 **Template:** [`docs/04-metricas.md`](./docs/04-metricas.md)
-
----
-
-### 6. Pitch
-
-Grave um **pitch de 3 minutos** (estilo elevador) apresentando:
-
-- Qual problema seu agente resolve?
-- Como ele funciona na prática?
-- Por que essa solução é inovadora?
-
-📄 **Template:** [`docs/05-pitch.md`](./docs/05-pitch.md)
-
----
-
-## Ferramentas Sugeridas
-
-Todas as ferramentas abaixo possuem versões gratuitas:
-
-| Categoria | Ferramentas |
-|-----------|-------------|
-| **LLMs** | [ChatGPT](https://chat.openai.com/), [Copilot](https://copilot.microsoft.com/), [Gemini](https://gemini.google.com/), [Claude](https://claude.ai/), [Ollama](https://ollama.ai/) |
-| **Desenvolvimento** | [Streamlit](https://streamlit.io/), [Gradio](https://www.gradio.app/), [Google Colab](https://colab.research.google.com/) |
-| **Orquestração** | [LangChain](https://www.langchain.com/), [LangFlow](https://www.langflow.org/), [CrewAI](https://www.crewai.com/) |
-| **Diagramas** | [Mermaid](https://mermaid.js.org/), [Draw.io](https://app.diagrams.net/), [Excalidraw](https://excalidraw.com/) |
+### Exemplos de Linguagem
+- Saudação: “Fala! Bora organizar suas finanças hoje?” “Oi 😄 Me conta sua meta que eu te ajudo a montar um plano.”
+- Confirmação: “Entendi! Então sua meta é guardar R$ 20 mil em 5 anos, certo?” “Boa, já anotei seu limite de gastos mensal.”
+- Orientação Educativa: “Vou te mostrar como dividir isso em metas menores pra ficar bem mais fácil.” “Se você guardar R$ 300 por mês, em 5 anos você chega lá tranquilo.”
+- Alerta de Gastos: “Atenção 👀 Você já usou 80% do seu limite esse mês.” “Se continuar nesse ritmo, pode estourar o teto antes do fim do mês.”
+- Erro/Limitação: “Não consigo acessar sua conta bancária, mas posso te ajudar a controlar manualmente aqui.” “Ainda não tenho esse dado, mas me diga seu gasto médio mensal que eu calculo com você.”
 
 ---
 
-## Estrutura do Repositório
+## Arquitetura
 
-```
-📁 lab-agente-financeiro/
-│
-├── 📄 README.md
-│
-├── 📁 data/                          # Dados mockados para o agente
-│   ├── historico_atendimento.csv     # Histórico de atendimentos (CSV)
-│   ├── perfil_investidor.json        # Perfil do cliente (JSON)
-│   ├── produtos_financeiros.json     # Produtos disponíveis (JSON)
-│   └── transacoes.csv                # Histórico de transações (CSV)
-│
-├── 📁 docs/                          # Documentação do projeto
-│   ├── 01-documentacao-agente.md     # Caso de uso e arquitetura
-│   ├── 02-base-conhecimento.md       # Estratégia de dados
-│   ├── 03-prompts.md                 # Engenharia de prompts
-│   ├── 04-metricas.md                # Avaliação e métricas
-│   └── 05-pitch.md                   # Roteiro do pitch
-│
-├── 📁 src/                           # Código da aplicação
-│   └── app.py                        # (exemplo de estrutura)
-│
-├── 📁 assets/                        # Imagens e diagramas
-│   └── ...
-│
-└── 📁 examples/                      # Referências e exemplos
-    └── README.md
+### Diagrama
+
+```mermaid
+flowchart TD
+    A[Cliente] -->|Mensagem| B[Interface]
+    B --> C[Orquestrador]
+    C --> D[LLM]
+    C --> E[Base de Conhecimento]
+    E --> C
+    C --> F[Validação & Guardrails]
+    F --> G[Resposta]
 ```
 
+### Componentes
+
+| Componente | Descrição |
+|------------|-----------|
+| Interface | Chat web simples (ex: Streamlit) ou chat via terminal (CLI) para protótipo |
+| Orquestrador | Camada que recebe a mensagem, monta contexto, chama o LLM e aplica regras (ex: Python)
+| LLM | Modelo via API (ex: GPT-4/4.1/4o ou equivalente) para gerar respostas e planos |
+| Base de Conhecimento | Dados do usuário + regras do agente (ex: JSON/CSV) — metas, limites, gastos e histórico |
+| Validação | Regras anti-alucinação + checagem de números + política de segurança (ex: validações antes de responder) |
+
 ---
 
-## Dicas Finais
+## Segurança e Anti-Alucinação
 
-1. **Comece pelo prompt:** Um bom system prompt é a base de um agente eficaz
-2. **Use os dados mockados:** Eles garantem consistência e evitam problemas com dados sensíveis
-3. **Foque na segurança:** No setor financeiro, evitar alucinações é crítico
-4. **Teste cenários reais:** Simule perguntas que um cliente faria de verdade
-5. **Seja direto no pitch:** 3 minutos passam rápido, vá ao ponto
+### Estratégias Adotadas
+
+- [x] O agente só faz cálculos e recomendações de planejamento com base nos dados que o usuário forneceu (renda, metas, prazos, limites).
+- [x] Quando faltar informação, o agente não inventa: ele pede os dados mínimos ou sugere cenários (ex: “se você guardar R$ X/mês…”).
+- [x] Respostas que envolvem números passam por checagem (ex: soma de gastos, % do limite, valor mensal necessário pra meta).
+- [x] O agente não recomenda investimentos específicos sem entender perfil e objetivos; foca em educação financeira e organização.
+- [x] Sempre explicita premissas: “considerando que sua meta é Y em Z meses…”.
+
+
+### Limitações Declaradas
+> O que o agente NÃO faz?
+
+- Não acessa banco, cartão, Open Finance ou dados privados automaticamente.
+- Não executa transações financeiras.
+- Não substitui aconselhamento profissional (contador/planejador financeiro).
+- Não garante rentabilidade nem indica “investimento certo” sem perfil, risco e contexto.
+- Não cria diagnósticos complexos (ex: imposto, declaração, dívidas judiciais) sem dados e sem validação externa.
+- Não “adivinha” renda, gastos ou metas — tudo depende do usuário alimentar as informações.
