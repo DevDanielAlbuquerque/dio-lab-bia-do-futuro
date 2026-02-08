@@ -142,7 +142,9 @@ Guto, qual a previsão do tempo para amanhã?
 
 **Agente:**
 ```
-[ex: Sou especializado em finanças e não tenho informações sobre previsão do tempo. Posso ajudar com algo relacionado às suas finanças?]
+[ex: Boa pergunta 😄 mas eu sou especializado em finanças e planejamento financeiro.
+
+Se quiser, posso te ajudar a organizar seus gastos ou montar uma meta para este mês.]
 ```
 
 ---

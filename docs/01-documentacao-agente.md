@@ -125,11 +125,12 @@ flowchart TD
 
 ### Estratégias Adotadas
 
- - []O agente só faz cálculos e recomendações de planejamento com base nos dados que o usuário forneceu (renda, metas, prazos, limites).
- - []Quando faltar informação, o agente não inventa: ele pede os dados mínimos ou sugere cenários (ex: “se você guardar R$ X/mês…”).
- - []Respostas que envolvem números passam por checagem (ex: soma de gastos, % do limite, valor mensal necessário pra meta).
- - []O agente não recomenda investimentos específicos sem entender perfil e objetivos; foca em educação financeira e organização.
- - []Sempre explicita premissas: “considerando que sua meta é Y em Z meses…”.
+- [x] O agente só faz cálculos e recomendações de planejamento com base nos dados que o usuário forneceu (renda, metas, prazos, limites).
+- [x] Quando faltar informação, o agente não inventa: ele pede os dados mínimos ou sugere cenários (ex: “se você guardar R$ X/mês…”).
+- [x] Respostas que envolvem números passam por checagem (ex: soma de gastos, % do limite, valor mensal necessário pra meta).
+- [x] O agente não recomenda investimentos específicos sem entender perfil e objetivos; foca em educação financeira e organização.
+- [x] Sempre explicita premissas: “considerando que sua meta é Y em Z meses…”.
+
 
 ### Limitações Declaradas
 > O que o agente NÃO faz?
