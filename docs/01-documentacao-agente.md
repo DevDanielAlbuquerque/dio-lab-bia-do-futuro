@@ -5,7 +5,7 @@
 ### Problema
 > Qual problema financeiro seu agente resolve?
 
-[O agente Guto resolve um problema muito comum:
+O agente Guto resolve um problema muito comum:
 muitas pessoas querem melhorar sua vida financeira, mas não sabem por onde começar.
 
 Ele foca principalmente em:
@@ -13,7 +13,7 @@ Ele foca principalmente em:
 - Planejamento de metas financeiras
 - Organização de gastos do dia a dia
 - Controle para não ultrapassar limites estabelecidos
-- Muitas metas parecem grandes demais (como comprar um carro ou viajar), e isso gera ansiedade e procrastinação.]
+- Muitas metas parecem grandes demais (como comprar um carro ou viajar), e isso gera ansiedade e procrastinação.
 
 ### Solução
 > Como o agente resolve esse problema de forma proativa?
