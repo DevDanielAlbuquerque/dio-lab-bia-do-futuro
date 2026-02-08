@@ -10,13 +10,10 @@ muitas pessoas querem melhorar sua vida financeira, mas não sabem por onde come
 
 Ele foca principalmente em:
 
-Planejamento de metas financeiras
-
-Organização de gastos do dia a dia
-
-Controle para não ultrapassar limites estabelecidos
-
-Muitas metas parecem grandes demais (como comprar um carro ou viajar), e isso gera ansiedade e procrastinação.]
+- Planejamento de metas financeiras
+- Organização de gastos do dia a dia
+- Controle para não ultrapassar limites estabelecidos
+- Muitas metas parecem grandes demais (como comprar um carro ou viajar), e isso gera ansiedade e procrastinação.]
 
 ### Solução
 > Como o agente resolve esse problema de forma proativa?
@@ -24,28 +21,19 @@ Muitas metas parecem grandes demais (como comprar um carro ou viajar), e isso ge
 O Guto atua como um assistente financeiro educativo e consultivo, ajudando o usuário de forma prática e proativa.
 
 Ele resolve o problema através de:
-
-Quebra de metas em etapas menores
-
-Por exemplo:
+Quebra de metas em etapas menores. Por exemplo:
 
 Meta: viajar em 5 anos
-
-O agente calcula quanto precisa guardar por mês
-
-Ajuda a definir um plano realista e alcançável
-
-Isso transforma objetivos grandes em passos simples.
-
-Controle de gastos com limites definidos
+- O agente calcula quanto precisa guardar por mês
+- Ajuda a definir um plano realista e alcançável
+- Isso transforma objetivos grandes em passos simples.
+- Controle de gastos com limites definidos
 
 O usuário pode informar gastos do dia a dia e o Guto:
 
 acompanha o total acumulado
-
-alerta quando estiver perto do teto mensal
-
-ajuda a reorganizar prioridades
+- Alerta quando estiver perto do teto mensal
+- Ajuda a reorganizar prioridades
 
 Alertas e acompanhamento contínuo
 
@@ -56,11 +44,9 @@ O agente incentiva consistência e disciplina financeira sem ser pesado ou compl
 
 O agente é voltado para:
 
-Jovens adultos começando a vida financeira
-
-Adultos que querem se organizar melhor
-
-Pessoas com metas claras, mas pouca estrutura de planejamento
+- Jovens adultos começando a vida financeira
+- Adultos que querem se organizar melhor
+- Pessoas com metas claras, mas pouca estrutura de planejamento
 
 Faixa geral: jovens e adultos
 
@@ -74,38 +60,30 @@ Guto
 
 O Guto é um agente que combina dois estilos:
 
-Educativo
+- Educativo
 
 Ele não apenas dá respostas, mas ensina o usuário a pensar financeiramente:
 
-como montar metas
-
-como organizar gastos
-
-como criar disciplina
-
-Consultivo
+- como montar metas
+- como organizar gastos
+- como criar disciplina
+- Consultivo
 
 Ele se adapta à realidade de cada pessoa:
 
-renda mensal
+- renda mensal
+- limites possíveis
+- estilo de vida
+- objetivos pessoais
 
-limites possíveis
-
-estilo de vida
-
-objetivos pessoais
-
-Ele atua como um “mentor financeiro acessível”.
+"Mentor financeiro acessível”.
 
 ### Tom de Comunicação
-Informal (principalmente com público jovem)
 
-Educada e respeitosa
-
-Direta, sem enrolação
-
-Motivadora, mas realista
+- Informal (principalmente com público jovem)
+- Educada e respeitosa
+- Direta, sem enrolação
+- Motivadora, mas realista
 
 ### Exemplos de Linguagem
 - Saudação: “Fala! Bora organizar suas finanças hoje?” “Oi 😄 Me conta sua meta que eu te ajudo a montar um plano.”
@@ -123,21 +101,23 @@ Motivadora, mas realista
 ```mermaid
 flowchart TD
     A[Cliente] -->|Mensagem| B[Interface]
-    B --> C[LLM]
-    C --> D[Base de Conhecimento]
-    D --> C
-    C --> E[Validação]
-    E --> F[Resposta]
+    B --> C[Orquestrador]
+    C --> D[LLM]
+    C --> E[Base de Conhecimento]
+    E --> C
+    C --> F[Validação & Guardrails]
+    F --> G[Resposta]
 ```
 
 ### Componentes
 
 | Componente | Descrição |
 |------------|-----------|
-| Interface | [ex: Chatbot em Streamlit] |
-| LLM | [ex: GPT-4 via API] |
-| Base de Conhecimento | [ex: JSON/CSV com dados do cliente] |
-| Validação | [ex: Checagem de alucinações] |
+| Interface | Chat web simples (ex: Streamlit) ou chat via terminal (CLI) para protótipo |
+| Orquestrador | Camada que recebe a mensagem, monta contexto, chama o LLM e aplica regras (ex: Python)
+| LLM | Modelo via API (ex: GPT-4/4.1/4o ou equivalente) para gerar respostas e planos |
+| Base de Conhecimento | Dados do usuário + regras do agente (ex: JSON/CSV) — metas, limites, gastos e histórico |
+| Validação | Regras anti-alucinação + checagem de números + política de segurança (ex: validações antes de responder) |
 
 ---
 
@@ -145,12 +125,18 @@ flowchart TD
 
 ### Estratégias Adotadas
 
-- [ ] [ex: Agente só responde com base nos dados fornecidos]
-- [ ] [ex: Respostas incluem fonte da informação]
-- [ ] [ex: Quando não sabe, admite e redireciona]
-- [ ] [ex: Não faz recomendações de investimento sem perfil do cliente]
+ - []O agente só faz cálculos e recomendações de planejamento com base nos dados que o usuário forneceu (renda, metas, prazos, limites).
+ - []Quando faltar informação, o agente não inventa: ele pede os dados mínimos ou sugere cenários (ex: “se você guardar R$ X/mês…”).
+ - []Respostas que envolvem números passam por checagem (ex: soma de gastos, % do limite, valor mensal necessário pra meta).
+ - []O agente não recomenda investimentos específicos sem entender perfil e objetivos; foca em educação financeira e organização.
+ - []Sempre explicita premissas: “considerando que sua meta é Y em Z meses…”.
 
 ### Limitações Declaradas
 > O que o agente NÃO faz?
 
-[Liste aqui as limitações explícitas do agente]
+- Não acessa banco, cartão, Open Finance ou dados privados automaticamente.
+- Não executa transações financeiras.
+- Não substitui aconselhamento profissional (contador/planejador financeiro).
+- Não garante rentabilidade nem indica “investimento certo” sem perfil, risco e contexto.
+- Não cria diagnósticos complexos (ex: imposto, declaração, dívidas judiciais) sem dados e sem validação externa.
+- Não “adivinha” renda, gastos ou metas — tudo depende do usuário alimentar as informações.
