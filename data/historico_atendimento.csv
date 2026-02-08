@@ -4,3 +4,12 @@ data,canal,tema,resumo,resolvido
 2025-10-01,chat,Tesouro Selic,Cliente pediu explicação sobre o funcionamento do Tesouro Direto,sim
 2025-10-12,chat,Metas financeiras,Cliente acompanhou o progresso da reserva de emergência,sim
 2025-10-25,email,Atualização cadastral,Cliente atualizou e-mail e telefone,sim
+2026-02-08 16:00:25,chat,interacao,"Boa tarde, Guto! Você sabe se o Flamengo ganhou ontem?",sim
+2026-02-08 16:00:36,chat,interacao,Vai chover?,sim
+2026-02-08 16:01:04,chat,interacao,Quanto falta pra minha meta?,sim
+2026-02-08 16:01:12,chat,interacao,Quanto eu gastei esse mês?,sim
+2026-02-08 16:01:18,chat,interacao,Me explica Tesouro Selic,sim
+2026-02-08 16:02:06,chat,interacao,clear,sim
+2026-02-08 16:03:35,chat,interacao,Quanto falta pra minha meta?,sim
+2026-02-08 16:03:42,chat,interacao,Quanto eu gastei esse mês?,sim
+2026-02-08 16:03:53,chat,interacao,Me explica Tesouro Selic,sim
